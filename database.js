@@ -26,3 +26,35 @@ export async function addUser(username,email,password,first_name,last_name,locat
     }   
 }
 
+export async function getProductsByCategory(category, limit, offset) {
+  const [products] = await pool.query(
+    `SELECT products.* FROM products
+     JOIN categories ON products.category_id = categories.id
+     WHERE categories.name = ?
+     LIMIT ? OFFSET ?`,
+    [category, limit, offset]
+  );
+
+  const [countResult] = await pool.query(
+    `SELECT COUNT(*) as total FROM products
+     JOIN categories ON products.category_id = categories.id
+     WHERE categories.name = ?`,
+    [category]
+  );
+
+  return {
+    products,
+    total: countResult[0].total
+  };
+}
+
+export async function getProductById(id) {
+  const [rows] = await pool.query(
+    `SELECT products.*, categories.name AS category
+     FROM products
+     JOIN categories ON products.category_id = categories.id
+     WHERE products.id = ?`,
+    [id]
+  );
+  return rows[0] || null;
+}
