@@ -1,0 +1,53 @@
+<!-- gasasworebeli maq filebi rom globalshi shevitano es faili -->
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>LG.ge</title>
+        <link rel="shortcut icon" type="image/jpg" href="assets/icon.png"/>
+        <link rel="stylesheet" href="headFootStyle.css">
+        <link rel="stylesheet" href="main_section.css">
+        <link rel="stylesheet" href="login.css" />
+    </head>
+
+    <body>
+
+        <div id="header"></div>
+
+        <section class="login-section">
+            <form id="loginForm">
+                <h2>Login</h2>
+
+                <label for="email">Email</label>
+                <input type="email" id="email" name="email" required />
+
+                <label for="password">Password</label>
+                <input type="password" id="password" name="password" required minlength="6" />
+
+                <button type="submit">Login</button>
+                <p id="error" class="error"></p>
+            </form>
+        </section>
+
+
+        <div id="footer"></div>
+
+        <script>
+         fetch('header.html')
+            .then(response => response.text())
+            .then(data => {
+            document.getElementById('header').innerHTML = data;
+            });
+
+        fetch('footer.html')
+            .then(response => response.text())
+            .then(data => {
+            document.getElementById('footer').innerHTML = data;
+            });
+            
+        </script>
+
+    </body>
+</html>

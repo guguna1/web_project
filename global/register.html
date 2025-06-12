@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>LG.ge</title>
+        <link rel="shortcut icon" type="image/jpg" href="/assets/icon.png"/>
+        <link rel="stylesheet" href="/headFootStyle.css">
+        <link rel="stylesheet" href="/register.css">
+    </head>
+
+    <body>
+
+        <div id="header"></div>
+
+        <section id="register_section">
+            
+            <div class="container">
+                <h2>Register</h2>
+                <div id="registerError" class="error"></div>
+                <form id="registerForm">
+                <input type="text" id="firstName" placeholder="First Name" required>
+                <input type="text" id="lastName" placeholder="Last Name" required>
+                <input type="text" id="location" placeholder="Location" required>
+                <input type="email" id="email" placeholder="Email" required>
+                <input type="password" id="password" placeholder="Password (min 8 chars)" required>
+                <button type="submit">Register</button>
+                </form>
+                <p>Already have an account? <a href="/login.html">Login here</a>.</p>
+            </div>
+
+            
+        </section>
+
+        <div id="footer"></div>
+
+        <script src="/insertHeadFoot.js"></script>
+
+    </body>
+</html>
